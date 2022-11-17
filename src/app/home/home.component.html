@@ -1,0 +1,61 @@
+<div *ngIf="trendingMovies.length==0;else xxx"  class="d-flex justify-content-center align-items-center vh-100 w-100">
+    <i  class="fas fa-spin fa-spinner text-white fs-1"></i>
+</div>
+<ng-template #xxx>
+    <div class="py-4">
+        <div class="container  ">
+            <div class="row  g-3 ">
+                <div class="col-md-4 d-flex align-items-center position-relative">
+                    <div class="box p-3 ">
+                        <h2 class="mt-3">Trending <br> Movies <br> To Watch Right now</h2>
+                        <p class="text-muted mb-3">most Watched movies by day</p>
+                    </div>
+                </div>
+                <div *ngFor="let movie of trendingMovies" class="col-sm-6 col-md-4 col-lg-3 col-xl-2 ">
+                        <div class="movie blur">
+                            <a [routerLink]="['/movies-deteils',movie.id]">
+                                <img class="w-100 " [src]="imgPrefix+movie.poster_path" alt="">
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row  g-3 my-5">
+                <div class="col-md-4 d-flex align-items-center position-relative">
+                    <div class="box p-3">
+                        <h2 class="mt-3">Trending <br> TV <br> To Watch Right now</h2>
+                        <p class="text-muted mb-3">most Watched TV by day</p>
+                    </div>
+                </div>
+                <div *ngFor="let tv of trendingTv" class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="tv blur">
+                        <a [routerLink]="['/tv-detelies',tv.id]">
+                            <img class="w-100 " [src]="imgPrefix+tv.poster_path" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row  g-3 my-5">
+                <div class="col-md-4 d-flex align-items-center position-relative">
+                    <div class="box p-3">
+                        <h2 class="mt-3">Trending <br> Stars <br> To Watch Right now</h2>
+                        <p class="text-muted mb-3">most Watched Stars by day</p>
+                    </div>
+                </div>
+                <div *ngFor="let stars of trendingStars" class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                    <div class="tv blur">
+                        <a [routerLink]="['/stars-detelies',stars.id]">
+                            <img class="w-100 " [src]="imgPrefix+stars.profile_path" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    
+</ng-template>

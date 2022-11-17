@@ -1,0 +1,23 @@
+<div class="container py-5 ">
+    <div class="  mx-auto">
+        <form class="  mx-auto p-5 box " (ngSubmit)="submitLoginForm(loginForm)" [formGroup]="loginForm">
+            <h2 class=" pb-4 fw-bold fs-2">Sign In |</h2>
+            <input formControlName="email" placeholder=" Enter your E-mail" class=" p-2 bg-transparent text-white w-100   mb-3" type="email">
+            <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+                <p *ngIf="loginForm.get('email')?.getError('required')" class=" text-danger "  >*E-mail is required</p>
+                <p *ngIf="loginForm.get('email')?.getError('email')" class=" text-danger " >*E-mail must contain "@gmail.com"</p>
+            </div>
+            <input formControlName="password" placeholder=" Enter your Password" class=" bg-transparent  w-100 p-2  text-white mb-4" type="password">
+            <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+                <p *ngIf="loginForm.get('password')?.getError('required')" class=" text-danger  "  >*Password is required</p>
+                <p *ngIf="loginForm.get('password')?.getError('pattern')" class="  text-danger  " >*Password must consist of 4 letters or 4 numbers at Least</p>
+            </div>
+            <button type="submit" [disabled]="loginForm.invalid" class="p-2   w-100 ">
+                <span *ngIf="isLoading"><i class="fas fa-spin fa-spinner"></i></span>
+                <span *ngIf="!isLoading">Sign In</span>
+            </button>
+            <div *ngIf="errorMessage" class="alert text-danger p-1 mt-5">*{{errorMessage}}</div>
+            <div class="text-center mt-3">I do not have an account! <a class=" text-decoration-none" (click)="goRegister()">Log Up</a></div>
+        </form>
+    </div>
+</div>
