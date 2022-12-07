@@ -29,11 +29,11 @@ export class AuthService {
   }
 
   signUp(formData:object):Observable<any>{
-    return this._HttpClient.post('https://route-egypt-api.herokuapp.com/signup',formData)
+    return this._HttpClient.post('https://route-movies-api.vercel.app/signup',formData)
     
   }
   signIn(formData:object):Observable<any>{
-    return this._HttpClient.post('https://route-egypt-api.herokuapp.com/signin',formData)
+    return this._HttpClient.post('https://route-movies-api.vercel.app/signin',formData)
     
   }
 signOut(){
