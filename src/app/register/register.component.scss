@@ -1,0 +1,70 @@
+button
+{
+   color: white;
+   background-color:rgb(0, 68, 91);
+   border: none;
+}
+.box
+{
+    border: solid rgb(84, 84, 84) 1px;
+    width: 45%;
+    min-height: 520px;
+
+}  
+
+.one 
+{
+    margin-right:7px ;
+
+}
+input
+{
+    border : solid rgb(84, 84, 84)  1px;
+
+}
+a
+{
+    color: white;
+    &:hover 
+    {
+        color: rgb(156, 156, 156);
+        cursor: pointer;
+    }
+
+}
+
+
+@media screen and (min-width:0px) and (max-width:700px){
+    .box
+{
+    width: 80%;
+    min-height: 520px;
+
+} 
+.w-48
+{
+    width: 100%;
+}
+.one 
+{
+    margin-right:0px ;
+
+}
+}
+@media screen and (min-width:701px) and (max-width:992px){
+    .box
+{
+    width: 80%;
+    min-height: 520px;
+
+} 
+.w-48
+{
+    width: 100%;
+}
+.one 
+{
+    margin-right:0px ;
+
+}
+}

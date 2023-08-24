@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid ">
+        <p class="navbar-brand fs-1 text-white fw-bold mb-1" href="#">noxe</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"  >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-0 text-center  fs-5 ">
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link text-white active  mx-1" routerLinkActive="test"  routerLink="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link text-white  mx-1" routerLinkActive="test"  routerLink="movies">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link text-white  mx-1" routerLinkActive="test" routerLink="tv">TV Shows</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 text-center  mb-lg-0 fs-5">
+                <li class="nav-item d-flex fs-5  text-white align-items-center justify-content-center">
+                    <i class="fab mx-2  text-center  you fa-youtube"></i>
+                    <i class="fab mx-2  text-center insta fa-instagram"></i>
+                    <i class="fab mx-2  text-center sound fa-soundcloud"></i>
+                    <i class="fab mx-2  text-center spot fa-spotify"></i>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="!isLogin" class="nav-link text-white"   routerLink="logIn">logIn</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="!isLogin" class="nav-link text-white"  routerLink="register">regester</a>
+                </li>
+                <li class="nav-item">
+                    <span (click)="logOut()" *ngIf="isLogin" class="nav-link text-white"    >logOut </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

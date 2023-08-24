@@ -1,0 +1,28 @@
+
+<div *ngIf="moviShow.length==0;else xxx" class="d-flex justify-content-center align-items-center vh-100 w-100">
+    <i  class="fas fa-spin fa-spinner text-white fs-1"></i>
+</div>
+<ng-template #xxx>
+    <div class="container margin ">
+        <div class="row flex-lg-nowrap p-5">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <img class="w-100 rotate" [src]="imgPrefix+moviShow.poster_path" alt="">
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-8 p-5">
+                <h3 class="movie-name ">Movie Name: <span>{{moviShow.title}}</span> </h3>
+                <p class="text-muted my-4">{{moviShow.overview}}</p>
+                <p class="fs-6"> Date: <span>{{moviShow.release_date}}</span></p>
+                <p>vote: <span>{{moviShow.vote_average}}</span></p>
+                <p>Popularity: <span>{{moviShow.popularity}}</span></p>
+                <p>Grerns: <span>{{moviShow.genres[1].name }}</span></p>
+                <div class="mt-5">
+                    <h5>Production Companies</h5>
+                    <div class="d-flex justify-content-between ">
+                        <p>Production Company: <span>{{moviShow.production_companies[0].name}}</span></p>
+                        <p>Location: <span>{{moviShow.production_companies[1].origin_country}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</ng-template>

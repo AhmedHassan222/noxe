@@ -1,0 +1,72 @@
+
+nav 
+{
+    background-color:rgb(0, 107, 143);
+}
+i:hover
+{                        
+    cursor: pointer;
+
+}
+
+span
+{
+    cursor: pointer;
+}
+.you:hover{
+    color: 	#FF0000;
+
+}
+.insta:hover
+{
+    color: rgb(161, 17, 94);
+
+}
+.sound:hover{
+    color: #ff8800;
+}
+.spot:hover{
+    color: #81b71a ;
+}
+
+.test{
+    font-weight: bold;
+
+}
+a 
+{
+    transition: all 0.5s;
+}
+a:hover 
+{
+    color: rgb(185, 185, 185) !important;
+
+}
+
+.one
+{
+    background-color: white;
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: -5px;
+    left: -50px;
+
+}
+.two
+{
+    background-color: white;
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 5px;
+    left: -50px;
+}
+
+@media screen and (min-width:0px) and (max-width:700px) {
+    li 
+    {
+        margin-top: 10px;
+        
+    }
+}

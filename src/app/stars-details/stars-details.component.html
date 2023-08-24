@@ -1,0 +1,20 @@
+
+<div *ngIf="starShow.length==0 "class="d-flex justify-content-center align-items-center vh-100 w-100">
+    <i  class="fas fa-spin fa-spinner text-white fs-1"></i>
+</div>
+<div class="container margin ">
+    <div class="row flex-lg-nowrap p-5">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <img class="w-100 rotate" [src]="imgPrefix+starShow.profile_path" alt="">
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8 p-5">
+            <h3 class="movie-name ">Stars Name: <span>{{starShow.name}}</span> </h3>
+
+            <p >known for department: <span>{{starShow.known_for_department}}</span> </p>
+            <p >known for department: <span>{{starShow.birthday}}</span> </p>
+            <p >place of birth: <span>{{starShow.place_of_birth}}</span> </p>
+            <p >popularity: <span class="text-danger">{{starShow.popularity}}</span> </p>
+
+        </div>
+    </div> 
+</div>

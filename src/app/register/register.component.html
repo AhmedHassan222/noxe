@@ -1,0 +1,41 @@
+<div class="container py-5">
+    <div class=" mx-auto">
+        <form class="mx-auto p-5 box " (ngSubmit)="register(registerForm)" [formGroup]="registerForm">
+            <h2 class=" pb-4 fw-bold fs-2">Sign Up |</h2>
+            <div class="d-flex flex-wrap justify-content-between ">
+                <input formControlName="name" placeholder=" Name" class="w-100 my-2  p-2 text-white bg-transparent  " type="text">
+            </div>
+            <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched">
+                <p *ngIf="registerForm.get('name')?.getError('required')" class=" text-danger"  >*name is required</p>
+                <p *ngIf="registerForm.get('name')?.getError('minlength')" class=" text-danger " >*Minlength is 3 letters</p>
+                <p *ngIf="registerForm.get('name')?.getError('maxlength')" class=" text-danger " >*Maxlength is 10 letters</p>
+            </div>
+            <input formControlName="password" placeholder="Password" class="w-100 p-2   text-white bg-transparent my-2" type="password">
+            <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched">
+                <p *ngIf="registerForm.get('password')?.getError('required')" class=" text-danger  "  >*Password is required</p>
+                <p *ngIf="registerForm.get('password')?.getError('pattern')" class="  text-danger  " >*Password must consist 4 letters or 4 numbers At least</p>
+            </div>
+            <input formControlName="rePassword" placeholder=" rePassword" class="w-100 p-2   text-white bg-transparent my-2" type="password">
+            <div *ngIf="registerForm.get('rePassword')?.errors && registerForm.get('rePassword')?.touched">
+                <p *ngIf="registerForm.get('rePassword')?.getError('required')" class=" text-danger  "  >*rePassword is required</p>
+                <p *ngIf="registerForm.get('rePassword')?.getError('pattern')" class="  text-danger  " >*rePassword must consist 4 letters or 4 numbers At least</p>
+            </div>
+            <input formControlName="email" placeholder="E-mail" class="w-100 p-2   text-white bg-transparent  my-2" type="email">
+            <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched">
+                <p *ngIf="registerForm.get('email')?.getError('required')" class=" text-danger "  >*E-mail is required</p>
+                <p *ngIf="registerForm.get('email')?.getError('email')" class=" text-danger " >*E-mail must contain "@gmail.com"</p>
+            </div>
+            <input formControlName="phone" placeholder="Phone number" class="w-100 p-2   text-white bg-transparent  my-2" type="tel">
+            <div *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched">
+                <p *ngIf="registerForm.get('phone')?.getError('required')" class=" text-danger "  >Phone number is required</p>
+                <p *ngIf="registerForm.get('phone')?.getError('pattern')" class=" text-danger " >*ex: 01023575113"</p>
+            </div>
+            <button type="submit" [disabled]="registerForm.invalid" class="p-2 w-100 my-3">
+                <span *ngIf="isLoading"><i class="fas fa-spin fa-spinner"></i></span>
+                <span *ngIf="!isLoading">Sign Up</span>
+            </button>
+            <div *ngIf="errorMessage" class="alert text-danger p-1 mt-5">*{{errorMessage}}</div>
+            <div class="text-center mt-3">Do you have already an account? <a class=" text-decoration-none" (click)="goLogin()">Log In</a></div>
+        </form>
+    </div>
+</div>

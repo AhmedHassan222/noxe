@@ -1,0 +1,32 @@
+a 
+{
+    color: white;
+    text-decoration: none;
+    &:hover 
+    {
+        text-decoration: underline;
+    }
+}
+
+.error
+{
+    font-size: 100px;
+    text-shadow: 0px 0px 5px white;
+}
+.not 
+{
+    font-size:50px ;
+}
+
+p
+{
+    font-size:25px ;
+}
+a
+{
+    font-size: 25px;
+}
+.notpage
+{
+    height: 80vh;
+}
